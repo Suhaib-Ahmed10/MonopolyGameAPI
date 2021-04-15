@@ -1,0 +1,19 @@
+Here I used Sring Boot for the API as it is faster and easier.
+
+Since the game only suports 2 player, I created a table for 2 users only and added extra info 
+like points, current position and placed they owned.
+
+Places will be concatinated each time a player purchases a place.
+Ex: ABC$BCD
+
+I chose this because it will be easier to check the owner of the property using indexOf method.
+
+I created a Data table that will hold all the places, BuyPrice, Rent and placeID.
+Place Id is a string Id that will be helpfull in UI for designing. We can give them as ID in UI.
+
+This Game is working properly as I tested it several times and solved few minor bugs.
+
+We need to insert the Data of places from backend and we shall play.
+
+I chose H2 Database as it is provided by Springs and I feel it very comfortable to work with it.
+

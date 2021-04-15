@@ -1,0 +1,34 @@
+This is a guide for the Monopoly game Api
+
+For every call we get the GameDO updated record in JSON format.
+
+To Create a new game, we need to send http://localhost:8080/api/create-game
+This URL will reset the old game if available and create a new game.
+
+Response - {"id":84,"pOnePoints":1000,"pTwoPoints":1000,"pOnePos":"START","pTwoPos":"START","startCrossed":false}
+
+To resume an old game, we need to send http://localhost:8080/api/resume-game
+This URL will get last played game and resume the play.
+Note: I have given a column called lastPlayedBy. This will help up to know which player is to play next.
+
+Once the game is started, we need to call the roll-dice api with the player as a parameter
+"http://localhost:8080/api/roll-die/p1" or "http://localhost:8080/api/roll-die/p2"
+
+Once this URL is provoked, we take a random dice number in Java and play the game.
+
+If a player is placed on an unowned place, then it will buy the place and subtract the amount from the player.
+Response:
+{"id":84,"pOnePoints":1000.00,"pTwoPoints":1240.00,"pOnePos":"KCS","pTwoPos":"KCS","pOneProperties":"KCS","pTwoProperties":"TAL$OKT","lastPlayedBy":"p1","turnNumber":5,"startCrossed":true,"rentOrBuyMessage":"You landed on King Cross station ","diceNumber":11}
+
+If the player is placed on the other player's place, then rent will be paid from this user.
+
+If a player crosses START then $200 is added to his points.
+
+If a player's points is less than 0 then he will be declared as Loser
+
+If game continues before 50th turn, we will check the highest amount holder and announce him as the winner.
+
+
+
+
+
