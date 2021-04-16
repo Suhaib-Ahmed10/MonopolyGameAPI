@@ -173,7 +173,9 @@ public class RestControllerR {
 			{
 				// checking winner before 50th turn
 				if(-1 < pOnePoint.compareTo(pTwoPoint))
-					won = "p1".equals(player)?"p2": player;
+					won = "p1".equals(player)?"p2": "p1";
+				else
+					won = "p1".equals(player)?"p1": "p2";
 			}
 			
 			if("p1".equalsIgnoreCase(player)){
